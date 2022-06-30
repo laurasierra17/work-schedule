@@ -1,15 +1,18 @@
 $(() => {
     // Create an array of all the hours to include in the scheduler
-    var times = ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
+    var workTimes = ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
     // Container
     var container = $('.container');
     
     // Display today's date in the header
     $('#currentDay').append(moment().format("dddd, MMM Do YYYY"));
 
+    function getLocalStorage(time, textArea) {
+        textArea.text(localStorage.getItem(time));
+    }
 
     // For every time in the 'times' array, create a row and three columns
-    times.forEach(time => {
+    workTimes.forEach(time => {
         // Create a row
         var row = $('<div class="row m-3">');
     
@@ -22,7 +25,8 @@ $(() => {
         // The wider column for the input  
         var col2 = $('<div class="col-6">');
         var inputGroup = $('<div class="input-group input-group-lg">')
-        inputGroup.append('<textarea class="form-control" aria-label="With textarea"></textarea>');
+        var textArea = $('<textarea class="form-control" id="todo-area" aria-label="With textarea"></textarea>')
+        inputGroup.append(textArea);
         col2.append(inputGroup);
         row.append(col2);
 
@@ -36,6 +40,16 @@ $(() => {
     
         // Append row to the container
         container.append(row);
+
+        // Get data from local storage upon refresh and place in their respective textarea
+        getLocalStorage(time, textArea);
+
+        // Upon clicking the "Save" button, the user's input is saved to local storage and doesn't disappear unless they erase the field and save again
+        btn.click((e) => {
+            e.preventDefault();
+            // Save to local storage
+            localStorage.setItem(time, textArea.val());
+        })
     })
 
 })
