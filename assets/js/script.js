@@ -1,6 +1,6 @@
 $(() => {
     // Create an array of all the hours to include in the scheduler
-    var workTimes = ['9', '10', '11', '12', '1', '2', '3', '4', '5'];
+    var workTimes = ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'];
     // Container
     var container = $('.container');
     
@@ -20,12 +20,6 @@ $(() => {
         // The first column shows the times
         var col1 = $('<div class="col text-right">');
         col1.attr('data-number', time);
-        // Assign its respective AM/PM
-        if (parseInt(time) == 9 || parseInt(time) == 10 || parseInt(time) == 11) {
-            col1.text(time + "am");
-        } else {
-            col1.text(time + "pm");
-        }
         row.append(col1);
 
         // The wider column for the input  
@@ -59,8 +53,9 @@ $(() => {
         })
 
         // Color code textarea box depending if `time` is less than, greater than, or equal to `now`
-        var now = moment().format("k");
-        
+        var now = moment().format("ha");
+
+
         // if (parseInt(now) == parseInt(time)) {
         //     textArea.addClass("bg-success");
         // } else if (parseInt(now) > parseInt(time)) {
