@@ -19,14 +19,13 @@ $(() => {
         // Create the three columns
         // The first column shows the times
         var col1 = $('<div class="col text-right">');
-        col1.text(time + "h");
+        col1.attr('data-number', time);
         row.append(col1);
 
         // The wider column for the input  
         var col2 = $('<div class="col-6">');
         var inputGroup = $('<div class="input-group input-group-lg">');
         var textArea = $('<textarea class="form-control" id="todo-area" aria-label="With textarea"></textarea>');
-        textArea.attr('data-number', time);
         textArea.addClass("text-white")
         inputGroup.append(textArea);
         col2.append(inputGroup);
