@@ -19,6 +19,22 @@ Future implementations I'd add are:
 
 ## Code Snippets
 
+```
+// Color code textarea box depending if `workTimeHour` is less than, greater than, or equal to `now`
+        var now = moment().hour();
+        var workTimeHour = col1.attr('data-number');
+
+        if (now == workTimeHour) {
+            textArea.addClass("bg-success");
+        } else if (now > workTimeHour) {
+            textArea.addClass("bg-secondary");
+        } else {
+            textArea.addClass("bg-danger");
+        }
+```
+
+To color code each text input, I have to compare the time assigned to each input with the current time. To successfully do this, I assigned a `data-number` attribute to each text input following the 24-hour format. I have done this since `moment().hour()` returns the hours in the 24-hour format, stored in the `now` variable. To easily make the comparison between hours, I created a pointer variable to each text input's data-number attribute and compared it with the current time. Using Bootstrap, I could change each text input's background color.
+
 ## Technologies Used
 
 HTML, CSS, JavaScript, jQuery, Bootstrap, Momentjs, and Git

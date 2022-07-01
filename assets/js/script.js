@@ -57,7 +57,7 @@ $(() => {
             localStorage.setItem(time, textArea.val());
         })
 
-        // Color code textarea box depending if `time` is less than, greater than, or equal to `now`
+        // Color code textarea box depending if `workTimeHour` is less than, greater than, or equal to `now`
         var now = moment().hour();
         var workTimeHour = col1.attr('data-number');
 
