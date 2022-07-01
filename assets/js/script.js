@@ -58,7 +58,7 @@ $(() => {
         })
 
         // Color code textarea box depending if `time` is less than, greater than, or equal to `now`
-        var now = 13;
+        var now = moment().hour();
         var workTimeHour = col1.attr('data-number');
 
         if (now == workTimeHour) {

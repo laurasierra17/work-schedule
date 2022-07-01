@@ -1,5 +1,7 @@
 # Word Day Scheduler
 
+![GIF demo of the application](./assets/images/Work%20Day%20Scheduler.gif)
+
 ## Screenshots
 Screenshot of the landing page:
 ![Screenshot of the application's landing page](./assets/images/screenshot.png)
