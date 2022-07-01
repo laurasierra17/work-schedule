@@ -1,6 +1,6 @@
 $(() => {
     // Create an array of all the hours to include in the scheduler
-    var workTimes = ['9', '10', '11', '12', '13', '14', '15', '16', '17'];
+    var workTimes = ['9', '10', '11', '12', '1', '2', '3', '4', '5'];
     // Container
     var container = $('.container');
     
@@ -24,8 +24,9 @@ $(() => {
 
         // The wider column for the input  
         var col2 = $('<div class="col-6">');
-        var inputGroup = $('<div class="input-group input-group-lg">')
-        var textArea = $('<textarea class="form-control" id="todo-area" aria-label="With textarea"></textarea>')
+        var inputGroup = $('<div class="input-group input-group-lg">');
+        var textArea = $('<textarea class="form-control" id="todo-area" aria-label="With textarea"></textarea>');
+        textArea.attr('data-number', time);
         textArea.addClass("text-white")
         inputGroup.append(textArea);
         col2.append(inputGroup);
@@ -55,12 +56,12 @@ $(() => {
         // Color code textarea box depending if `time` is less than, greater than, or equal to `now`
         var now = moment().format("k");
         
-        if (parseInt(now) == parseInt(time)) {
-            textArea.addClass("bg-success");
-        } else if (parseInt(now) > parseInt(time)) {
-            textArea.addClass("bg-secondary");
-        } else {
-            textArea.addClass("bg-danger");
-        }
+        // if (parseInt(now) == parseInt(time)) {
+        //     textArea.addClass("bg-success");
+        // } else if (parseInt(now) > parseInt(time)) {
+        //     textArea.addClass("bg-secondary");
+        // } else {
+        //     textArea.addClass("bg-danger");
+        // }
     })
 })
