@@ -10,6 +10,8 @@
 
 ## Technologies Used
 
+HTML, CSS, JavaScript, jQuery, Bootstrap, Momentjs, and Git
+
 ## Deployment Link
 
 https://laurasierra17.github.io/work-schedule/
