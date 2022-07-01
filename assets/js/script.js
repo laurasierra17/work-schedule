@@ -1,6 +1,6 @@
 $(() => {
     // Create an array of all the hours to include in the scheduler
-    var workTimes = ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
+    var workTimes = ['9', '10', '11', '12', '13', '14', '15', '16', '17'];
     // Container
     var container = $('.container');
     
@@ -19,7 +19,7 @@ $(() => {
         // Create the three columns
         // The first column shows the times
         var col1 = $('<div class="col text-right">');
-        col1.text(time);
+        col1.text(time + "h");
         row.append(col1);
 
         // The wider column for the input  
@@ -50,6 +50,16 @@ $(() => {
             // Save to local storage
             localStorage.setItem(time, textArea.val());
         })
-    })
 
+        // Color code textarea box depending if `time` is less than, greater than, or equal to `now`
+        var now = moment().format("k");
+        
+        if (parseInt(now) == parseInt(time)) {
+            textArea.addClass("bg-success");
+        } else if (parseInt(now) > parseInt(time)) {
+            textArea.addClass("bg-secondary");
+        } else {
+            textArea.addClass("bg-danger");
+        }
+    })
 })
