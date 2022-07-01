@@ -26,6 +26,7 @@ $(() => {
         var col2 = $('<div class="col-6">');
         var inputGroup = $('<div class="input-group input-group-lg">')
         var textArea = $('<textarea class="form-control" id="todo-area" aria-label="With textarea"></textarea>')
+        textArea.addClass("text-white")
         inputGroup.append(textArea);
         col2.append(inputGroup);
         row.append(col2);
