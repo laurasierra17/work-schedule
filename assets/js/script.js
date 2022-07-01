@@ -18,7 +18,7 @@ $(() => {
     
         // Create the three columns
         // The first column shows the times
-        var col1 = $('<div class="col text-right">');
+        var col1 = $('<div class="d-flex col text-right justify-content-end align-items-center">');
         if (time === '9am' || time === '10am' || time === '11am' || time === '12pm') {
             col1.attr('data-number', parseInt(time));
         } else {
