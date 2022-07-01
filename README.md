@@ -4,6 +4,8 @@
 
 ## Description
 
+With many schedulers online and each with different designs, it's difficult to find a minimalistic one that can serve the simple purpose to write and track daily todo's by the hour. This work day scheduler is simple, and color-codes each text input depending on the hour. And it's useful for usage between 9am and 5pm. The current time block is green; past times are in grey; future times are in red. Once you type in a task, just press the "save" button and it won't disappear.
+
 ## Future Implementations
 
 Future implementations I'd add are:
