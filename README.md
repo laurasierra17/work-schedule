@@ -6,6 +6,11 @@
 
 ## Future Implementations
 
+Future implementations I'd add are:
+- Once a text area fills, remove its ability to scroll and increment its height
+- A button to clear a text area
+- Give it a calendar look where the user can view every date of the month and populate it
+
 ## Code Snippets
 
 ## Technologies Used
