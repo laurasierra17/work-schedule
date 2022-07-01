@@ -19,7 +19,11 @@ $(() => {
         // Create the three columns
         // The first column shows the times
         var col1 = $('<div class="col text-right">');
-        col1.attr('data-number', time);
+        if (time === '9am' || time === '10am' || time === '11am' || time === '12pm') {
+            col1.attr('data-number', parseInt(time));
+        } else {
+            col1.attr('data-number', parseInt(time) + 12);
+        }
         col1.text(time);
         row.append(col1);
 
@@ -54,15 +58,15 @@ $(() => {
         })
 
         // Color code textarea box depending if `time` is less than, greater than, or equal to `now`
-        var now = moment().format("ha");
+        var now = moment().hour();
+        var workTimeHour = col1.attr('data-number');
 
-
-        // if (parseInt(now) == parseInt(time)) {
-        //     textArea.addClass("bg-success");
-        // } else if (parseInt(now) > parseInt(time)) {
-        //     textArea.addClass("bg-secondary");
-        // } else {
-        //     textArea.addClass("bg-danger");
-        // }
+        if (now == workTimeHour) {
+            textArea.addClass("bg-success");
+        } else if (now > workTimeHour) {
+            textArea.addClass("bg-secondary");
+        } else {
+            textArea.addClass("bg-danger");
+        }
     })
 })
