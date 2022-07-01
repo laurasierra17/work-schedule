@@ -20,6 +20,12 @@ $(() => {
         // The first column shows the times
         var col1 = $('<div class="col text-right">');
         col1.attr('data-number', time);
+        // Assign its respective AM/PM
+        if (parseInt(time) == 9 || parseInt(time) == 10 || parseInt(time) == 11) {
+            col1.text(time + "am");
+        } else {
+            col1.text(time + "pm");
+        }
         row.append(col1);
 
         // The wider column for the input  
