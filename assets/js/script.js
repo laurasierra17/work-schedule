@@ -20,6 +20,7 @@ $(() => {
         // The first column shows the times
         var col1 = $('<div class="col text-right">');
         col1.attr('data-number', time);
+        col1.text(time);
         row.append(col1);
 
         // The wider column for the input  
