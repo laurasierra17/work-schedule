@@ -1,4 +1,4 @@
-# Word Day Scheduler
+# Work Day Scheduler
 
 ![GIF demo of the application](./assets/images/Work%20Day%20Scheduler.gif)
 
